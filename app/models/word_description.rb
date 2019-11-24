@@ -1,0 +1,2 @@
+class WordDescription < ApplicationRecord
+end

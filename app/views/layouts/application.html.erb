@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DH</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    
+        
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+ <body data-spy="scroll" data-target="#navbar1" data-offset="60">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-primary bg-dark" id="navbar1">
+       	 <div class="container">
+		<div class="collapse navbar-collapse justify-content-start text-info" style="width: 33.33%"><h5><b>DH</b>Hack</h5></div>
+		<div class="collapse navbar-collapse justify-content-center" style="width: 33.33%"><a class="navbar-brand mr-1 mb-1 mt-0 logo text-light" href="../" >Д Е К А Д А Н С reader </a> </div>
+		<div class="collapse navbar-collapse justify-content-end text-success" style="width: 33.33%"><h5><b>КРОК</b></h5></div>
+         </div>
+        </nav> 
+    
+    <% if current_page?('/') %>
+    <header class="bg-dark">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12">
+                    <div class="text-center m-0 vh-100 d-flex flex-column justify-content-center text-light">
+                        <h1 class="display-3 wow zoomIn" data-wow-delay="5s">Д Е К А Д А Н С</h1>
+                        <h3 class="wow flipInX" data-wow-delay="6s">reader</h3><br><br>
+                        <p class="wow rotateIn" data-wow-delay="7.3s"><%=button_tag "import_contacts", id:"search_btn", title:"начать ", class:"btn btn-outline-light material-icons round_btn text-primary"%></p>
+                	<h5 class="wow flipInX text-light"" data-wow-delay="7.3s"> сайт-читалка облегчающий знакомство с произведениями 19 века</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <% end %>
+
+    
+    <div id="main_page" class="container h-100">
+        <%= yield %>
+    </div>
+    <script> new WOW().init(); </script>
+  </body>
+</html>
